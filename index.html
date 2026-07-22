@@ -5,23 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>自社セキュリティ診断</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap');
 
   :root{
-    --paper:#FAF7F0;
-    --paper-warm:#F3EEE2;
-    --ink:#2B2621;
-    --ink-soft:#5C554C;
-    --navy:#1F3A5F;
-    --navy-soft:#3A5578;
-    --alert:#C1442D;
-    --alert-bg:#FBEAE6;
-    --gold:#C9A227;
-    --gold-bg:#FBF3DA;
-    --safe:#4A7C59;
-    --safe-bg:#E9F2EB;
-    --line:#DDD5C4;
-    --shadow: 0 6px 24px rgba(43,38,33,0.08);
+    --paper:#F7F7F5;
+    --paper-warm:#EFEEEA;
+    --ink:#1A1A1A;
+    --ink-soft:#4A4A48;
+    --navy:#1B3A5C;
+    --navy-soft:#2E4E6E;
+    --alert:#8B3A2E;
+    --alert-bg:#F2E9E7;
+    --gold:#8A6D3B;
+    --gold-bg:#F0EBE0;
+    --safe:#3D5C42;
+    --safe-bg:#E9EDE8;
+    --line:#C9C7C0;
+    --shadow: none;
   }
 
   *{box-sizing:border-box;}
@@ -46,39 +46,38 @@
 
   /* ---------- HEADER ---------- */
   header{
-    padding:22px 24px 18px;
-    border-bottom:1px solid var(--line);
+    padding:20px 24px 16px;
+    border-bottom:2px solid var(--navy);
     position:sticky;
     top:0;
-    background:rgba(250,247,240,0.96);
-    backdrop-filter:blur(6px);
+    background:var(--paper);
     z-index:10;
   }
   .brand{
     font-family:'Noto Serif JP', serif;
     font-weight:700;
-    font-size:16px;
+    font-size:15px;
     color:var(--navy);
-    letter-spacing:0.02em;
-    margin-bottom:14px;
+    letter-spacing:0.04em;
+    margin-bottom:12px;
   }
   .progress-track{
-    height:10px;
+    height:6px;
     background:var(--paper-warm);
-    border-radius:99px;
+    border-radius:0;
     overflow:hidden;
     border:1px solid var(--line);
   }
   .progress-fill{
     height:100%;
-    background:linear-gradient(90deg, var(--navy), var(--navy-soft));
-    border-radius:99px;
-    transition:width 0.5s cubic-bezier(.4,0,.2,1);
+    background:var(--navy);
+    border-radius:0;
+    transition:width 0.3s ease;
     width:0%;
   }
   .progress-label{
     margin-top:8px;
-    font-size:15px;
+    font-size:14px;
     color:var(--ink-soft);
     font-weight:500;
   }
@@ -94,46 +93,49 @@
     font-size:14px;
     font-weight:700;
     color:var(--navy);
-    background:#EAEFF5;
-    padding:6px 14px;
-    border-radius:99px;
+    background:none;
+    border:1px solid var(--navy);
+    padding:5px 12px;
+    border-radius:0;
     margin-bottom:20px;
   }
   h1{
     font-family:'Noto Serif JP', serif;
-    font-size:30px;
-    font-weight:900;
-    line-height:1.5;
+    font-size:26px;
+    font-weight:700;
+    line-height:1.6;
     color:var(--ink);
     margin:0 0 20px;
   }
   .lede{
-    font-size:19px;
+    font-size:18px;
     color:var(--ink-soft);
     margin-bottom:28px;
   }
   .fact-card{
     background:#fff;
     border:1px solid var(--line);
-    border-left:5px solid var(--navy);
-    border-radius:14px;
-    padding:20px 22px;
-    margin-bottom:16px;
-    box-shadow:var(--shadow);
+    border-left:4px solid var(--navy);
+    border-radius:0;
+    padding:18px 20px;
+    margin-bottom:14px;
+    box-shadow:none;
   }
   .fact-card .num{
     font-family:'Noto Serif JP', serif;
-    font-weight:900;
-    font-size:26px;
+    font-weight:700;
+    font-size:22px;
     color:var(--navy);
     display:block;
     margin-bottom:6px;
   }
-  .fact-card p{margin:0; font-size:17px; color:var(--ink-soft);}
+  .fact-card p{margin:0; font-size:16px; color:var(--ink-soft);}
   .fact-source{
     font-size:13px;
-    color:#8A8175;
-    margin-top:6px;
+    color:#6B6963;
+    margin-top:8px;
+    border-top:1px solid var(--line);
+    padding-top:8px;
   }
 
   .btn-primary{
@@ -141,27 +143,27 @@
     width:100%;
     background:var(--navy);
     color:#fff;
-    border:none;
-    border-radius:16px;
-    padding:22px 24px;
-    font-size:20px;
+    border:1px solid var(--navy);
+    border-radius:0;
+    padding:20px 24px;
+    font-size:18px;
     font-weight:700;
     font-family:'Noto Sans JP', sans-serif;
     cursor:pointer;
-    box-shadow:0 4px 14px rgba(31,58,95,0.25);
-    transition:transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow:none;
+    transition:opacity 0.15s ease;
     margin-top:8px;
   }
-  .btn-primary:active{transform:scale(0.98);}
+  .btn-primary:active{opacity:0.85;}
   .btn-secondary{
     display:block;
     width:100%;
     background:transparent;
     color:var(--navy);
-    border:2px solid var(--navy);
-    border-radius:16px;
-    padding:20px 24px;
-    font-size:18px;
+    border:1px solid var(--navy);
+    border-radius:0;
+    padding:18px 24px;
+    font-size:17px;
     font-weight:700;
     font-family:'Noto Sans JP', sans-serif;
     cursor:pointer;
@@ -170,7 +172,7 @@
   .time-note{
     text-align:center;
     color:var(--ink-soft);
-    font-size:15px;
+    font-size:14px;
     margin-top:16px;
   }
 
@@ -179,59 +181,64 @@
     font-size:14px;
     font-weight:700;
     color:var(--navy);
-    background:#EAEFF5;
+    background:none;
     display:inline-block;
-    padding:5px 14px;
-    border-radius:99px;
+    padding:0;
     margin-bottom:18px;
+    border-bottom:1px solid var(--navy);
+    padding-bottom:4px;
   }
+  .q-category::before{content:"【"; }
+  .q-category::after{content:"】"; }
   .q-text{
     font-family:'Noto Serif JP', serif;
-    font-size:24px;
+    font-size:22px;
     font-weight:700;
-    line-height:1.6;
+    line-height:1.65;
     margin-bottom:10px;
     color:var(--ink);
   }
   .q-help{
-    font-size:16px;
+    font-size:15px;
     color:var(--ink-soft);
     margin-bottom:26px;
     background:var(--paper-warm);
     padding:14px 16px;
-    border-radius:12px;
+    border-radius:0;
+    border-left:3px solid var(--line);
   }
   .options{
     display:flex;
     flex-direction:column;
-    gap:12px;
+    gap:10px;
   }
   .option{
     display:flex;
     align-items:center;
     gap:14px;
     background:#fff;
-    border:2px solid var(--line);
-    border-radius:16px;
-    padding:20px 22px;
-    font-size:19px;
+    border:1px solid var(--line);
+    border-radius:0;
+    padding:19px 22px;
+    font-size:18px;
     font-weight:500;
     cursor:pointer;
     text-align:left;
-    transition:all 0.15s ease;
-    min-height:64px;
+    transition:background 0.1s ease;
+    min-height:60px;
   }
-  .option:active{transform:scale(0.98);}
+  .option:active{background:var(--paper-warm);}
   .option.selected{
     border-color:var(--navy);
-    background:#EAEFF5;
-    box-shadow:var(--shadow);
+    border-width:1.5px;
+    background:#EEF2F6;
+    box-shadow:none;
   }
   .option .dot{
-    width:26px;
-    height:26px;
+    width:22px;
+    height:22px;
     border-radius:50%;
-    border:2.5px solid var(--line);
+    border:1.5px solid var(--line);
     flex-shrink:0;
     display:flex;
     align-items:center;
@@ -240,8 +247,8 @@
   .option.selected .dot{border-color:var(--navy); background:var(--navy);}
   .option.selected .dot::after{
     content:'';
-    width:10px;
-    height:10px;
+    width:8px;
+    height:8px;
     border-radius:50%;
     background:#fff;
   }
@@ -254,11 +261,11 @@
   .btn-back{
     flex:0 0 auto;
     background:transparent;
-    border:2px solid var(--line);
+    border:1px solid var(--line);
     color:var(--ink-soft);
-    border-radius:16px;
-    padding:20px 22px;
-    font-size:18px;
+    border-radius:0;
+    padding:19px 22px;
+    font-size:17px;
     font-weight:700;
     cursor:pointer;
   }
@@ -266,66 +273,81 @@
     flex:1;
     background:var(--navy);
     color:#fff;
-    border:none;
-    border-radius:16px;
-    padding:20px 22px;
-    font-size:19px;
+    border:1px solid var(--navy);
+    border-radius:0;
+    padding:19px 22px;
+    font-size:18px;
     font-weight:700;
     cursor:pointer;
-    box-shadow:0 4px 14px rgba(31,58,95,0.25);
+    box-shadow:none;
   }
   .btn-next:disabled{
-    background:#C9C2B2;
+    background:#B9B7B0;
+    border-color:#B9B7B0;
     box-shadow:none;
     cursor:not-allowed;
   }
 
   /* ---------- RESULTS ---------- */
   .result-hero{
-    text-align:center;
-    padding:8px 0 28px;
+    text-align:left;
+    padding:8px 0 24px;
+    border:1px solid var(--navy);
+    background:#fff;
   }
-  .gauge-wrap{
-    position:relative;
-    width:260px;
-    height:150px;
-    margin:0 auto 8px;
+  .score-block{
+    display:flex;
+    align-items:stretch;
+    border-bottom:1px solid var(--line);
+  }
+  .score-block-main{
+    flex:0 0 auto;
+    padding:20px 28px;
+    border-right:1px solid var(--line);
+    text-align:center;
+  }
+  .score-block-detail{
+    flex:1;
+    padding:20px 24px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
   }
   .gauge-label{
-    font-size:16px;
+    font-size:14px;
     color:var(--ink-soft);
     font-weight:500;
-    margin-top:4px;
+    margin-top:2px;
   }
   .score-big{
     font-family:'Noto Serif JP', serif;
-    font-weight:900;
-    font-size:56px;
+    font-weight:700;
+    font-size:44px;
     line-height:1;
   }
   .score-unit{
-    font-size:20px;
+    font-size:16px;
     font-weight:700;
     color:var(--ink-soft);
   }
   .risk-tag{
     display:inline-block;
-    font-size:17px;
+    font-size:16px;
     font-weight:700;
-    padding:10px 22px;
-    border-radius:99px;
-    margin-top:10px;
+    padding:6px 16px;
+    border-radius:0;
+    border:1px solid currentColor;
+    margin-top:4px;
   }
 
   .section-title{
     font-family:'Noto Serif JP', serif;
-    font-size:22px;
+    font-size:20px;
     font-weight:700;
     margin:36px 0 16px;
     color:var(--ink);
-    border-bottom:3px solid var(--navy);
-    display:inline-block;
-    padding-bottom:6px;
+    border-bottom:2px solid var(--navy);
+    padding-bottom:8px;
   }
 
   .cat-bar-row{
@@ -334,100 +356,104 @@
   .cat-bar-head{
     display:flex;
     justify-content:space-between;
-    font-size:16px;
+    font-size:15px;
     font-weight:700;
     margin-bottom:8px;
   }
   .cat-bar-track{
-    height:22px;
+    height:16px;
     background:var(--paper-warm);
-    border-radius:99px;
+    border-radius:0;
     overflow:hidden;
     border:1px solid var(--line);
   }
   .cat-bar-fill{
     height:100%;
-    border-radius:99px;
-    transition:width 0.8s cubic-bezier(.4,0,.2,1);
+    border-radius:0;
+    transition:width 0.6s ease;
   }
 
   .scenario-card{
     background:#fff;
     border:1px solid var(--line);
-    border-radius:16px;
-    padding:22px;
-    margin-bottom:14px;
-    box-shadow:var(--shadow);
+    border-radius:0;
+    padding:20px;
+    margin-bottom:12px;
+    box-shadow:none;
   }
-  .scenario-card.danger{border-left:6px solid var(--alert); background:var(--alert-bg);}
-  .scenario-card.warn{border-left:6px solid var(--gold); background:var(--gold-bg);}
-  .scenario-card.ok{border-left:6px solid var(--safe); background:var(--safe-bg);}
+  .scenario-card.danger{border-left:4px solid var(--alert);}
+  .scenario-card.warn{border-left:4px solid var(--gold);}
+  .scenario-card.ok{border-left:4px solid var(--safe);}
   .scenario-title{
     font-weight:700;
-    font-size:18px;
-    display:flex;
-    align-items:center;
-    gap:10px;
+    font-size:17px;
+    display:block;
     margin-bottom:8px;
   }
-  .scenario-icon{font-size:24px;}
-  .scenario-body{font-size:16px; color:var(--ink-soft); line-height:1.75;}
+  .scenario-icon{display:none;}
+  .scenario-body{font-size:15px; color:var(--ink-soft); line-height:1.75;}
   .scenario-body b{color:var(--ink); font-weight:700;}
 
   .weak-item{
     background:#fff;
     border:1px solid var(--line);
-    border-radius:14px;
-    padding:18px 20px;
-    margin-bottom:12px;
+    border-radius:0;
+    padding:16px 20px;
+    margin-bottom:10px;
     display:flex;
     gap:14px;
     align-items:flex-start;
   }
   .weak-badge{
     flex-shrink:0;
-    width:34px;
-    height:34px;
-    border-radius:50%;
-    background:var(--alert);
-    color:#fff;
+    width:28px;
+    height:28px;
+    border-radius:0;
+    background:none;
+    border:1px solid var(--ink);
+    color:var(--ink);
     display:flex;
     align-items:center;
     justify-content:center;
-    font-weight:900;
-    font-size:16px;
+    font-weight:700;
+    font-size:14px;
   }
-  .weak-item-title{font-weight:700; font-size:17px; margin-bottom:4px;}
-  .weak-item-desc{font-size:15px; color:var(--ink-soft);}
+  .weak-item-title{font-weight:700; font-size:16px; margin-bottom:4px;}
+  .weak-item-desc{font-size:14px; color:var(--ink-soft);}
 
   .next-step-card{
-    background:var(--navy);
-    color:#fff;
-    border-radius:20px;
-    padding:28px 24px;
+    background:#fff;
+    color:var(--ink);
+    border:1px solid var(--navy);
+    border-radius:0;
+    padding:26px 24px;
     margin-top:32px;
-    box-shadow:var(--shadow);
+    box-shadow:none;
   }
   .next-step-card h3{
     font-family:'Noto Serif JP', serif;
-    font-size:22px;
+    font-size:19px;
     margin:0 0 14px;
+    color:var(--navy);
+    border-bottom:1px solid var(--line);
+    padding-bottom:12px;
   }
   .next-step-card p{
-    font-size:17px;
-    opacity:0.92;
+    font-size:16px;
+    opacity:1;
+    color:var(--ink-soft);
     margin-bottom:20px;
     line-height:1.8;
   }
   .next-step-card .btn-cta{
     display:block;
     width:100%;
-    background:#fff;
-    color:var(--navy);
-    border:none;
-    border-radius:14px;
-    padding:18px;
-    font-size:18px;
+    background:var(--navy);
+    color:#fff;
+    border:1px solid var(--navy);
+    border-radius:0;
+    padding:17px;
+    font-size:17px;
     font-weight:700;
     text-align:center;
     cursor:pointer;
@@ -438,7 +464,7 @@
     text-align:center;
     margin-top:28px;
     color:var(--ink-soft);
-    font-size:15px;
+    font-size:14px;
     text-decoration:underline;
     background:none;
     border:none;
@@ -449,7 +475,7 @@
 
   .disclaimer{
     font-size:13px;
-    color:#8A8175;
+    color:#6B6963;
     text-align:center;
     padding:20px 24px 32px;
     line-height:1.7;
@@ -483,19 +509,31 @@
       <p class="lede">気づいていないだけで、すでにリスクは存在しているかもしれません。25の質問に答えるだけで、自社の弱点がひと目でわかります。</p>
 
       <div class="fact-card">
-        <span class="num">1位</span>
-        <p>ランサム攻撃による被害は、情報セキュリティ10大脅威で不動の1位。二重・三重の脅迫が一般化し、事業そのものが停止する被害が多発しています。</p>
-        <div class="fact-source">出典：IPA「情報セキュリティ10大脅威 2026」</div>
+        <span class="num">約6割</span>
+        <p>ランサムウェア被害報告のうち、およそ6割が中小企業によるもの。業種別では製造業・卸売小売業が上位を占めています。</p>
+        <div class="fact-source">出典：警察庁「サイバー空間をめぐる脅威の情勢等」</div>
       </div>
 
       <div class="fact-card">
-        <span class="num">変化</span>
-        <p>かつては大企業が狙われていましたが、近年は<b>セキュリティ対策が手薄な中小企業</b>への攻撃割合が非常に高くなっています。</p>
-        <div class="fact-source">出典：警察庁統計</div>
+        <span class="num">約23%</span>
+        <p>中小企業の約4社に1社が、直近1年で何らかのサイバーインシデントを経験したと報告しています。</p>
+        <div class="fact-source">出典：IPA「中小企業等実態調査」</div>
       </div>
 
-      <button class="btn-primary" onclick="startQuiz()">診断をはじめる（約5分）</button>
+      <button class="btn-primary" onclick="showIndustrySelect()">診断をはじめる（約5分）</button>
       <div class="time-note">選択肢をタップするだけ。専門知識は不要です。</div>
+    </section>
+
+    <!-- ============ INDUSTRY SELECT SCREEN ============ -->
+    <section id="screen-industry" class="hidden">
+      <span class="intro-eyebrow">最初に1つだけ教えてください</span>
+      <h1 style="font-size:24px;">貴社の業種に近いものは？</h1>
+      <p class="lede">業種によって守るべきものや弱点が異なるため、最初に選んでいただくとより精度の高い診断になります。</p>
+
+      <div class="options" id="industryOptions" style="margin-bottom:20px;"></div>
+
+      <button class="btn-primary" id="btnStartWithIndustry" onclick="startQuiz()">この業種で診断をはじめる</button>
+      <button class="btn-back" style="width:100%; margin-top:14px;" onclick="backToIntro()">戻る</button>
     </section>
 
     <!-- ============ QUESTION SCREEN ============ -->
@@ -515,19 +553,18 @@
     <section id="screen-result" class="hidden">
 
       <div class="result-hero">
-        <div class="gauge-wrap">
-          <svg viewBox="0 0 260 150" id="gaugeSvg">
-            <path d="M 20 140 A 110 110 0 0 1 240 140" fill="none" stroke="#E5DFD0" stroke-width="22" stroke-linecap="round"/>
-            <path id="gaugeArc" d="M 20 140 A 110 110 0 0 1 240 140" fill="none" stroke="#C1442D" stroke-width="22" stroke-linecap="round" stroke-dasharray="0 999" />
-            <g id="needleGroup" transform="rotate(0 130 140)">
-              <line x1="130" y1="140" x2="130" y2="45" stroke="#2B2621" stroke-width="5" stroke-linecap="round"/>
-              <circle cx="130" cy="140" r="10" fill="#2B2621"/>
-            </g>
-          </svg>
+        <div style="padding:16px 24px 0;">
+          <div class="intro-eyebrow" id="resultIndustryLabel" style="margin-bottom:0;"></div>
         </div>
-        <div><span class="score-big" id="scoreBig">--</span><span class="score-unit">点 / 100点</span></div>
-        <div class="gauge-label">全国の中小企業と比較したセキュリティ充実度</div>
-        <div class="risk-tag" id="riskTag">診断中</div>
+        <div class="score-block">
+          <div class="score-block-main">
+            <div><span class="score-big" id="scoreBig">--</span><span class="score-unit"> / 100点</span></div>
+            <div class="gauge-label">総合評価点</div>
+          </div>
+          <div class="score-block-detail">
+            <div class="risk-tag" id="riskTag">診断中</div>
+          </div>
+        </div>
       </div>
 
       <div class="section-title">領域別スコア</div>
@@ -540,9 +577,9 @@
       <div id="weakItems"></div>
 
       <div class="next-step-card">
-        <h3>今なら、まだ間に合います</h3>
-        <p>弱点が見つかったことは悪いことではありません。多くの会社が同じ状態からスタートしています。次の一歩を一緒に整理しましょう。</p>
-        <button class="btn-cta" onclick="alert('担当者へのご相談導線をここに設定できます（例：LINE・お問い合わせフォームへのリンク）')">専門家に相談してみる</button>
+        <h3>今後の対応について</h3>
+        <p>診断結果をもとに、優先して着手すべき対策を整理いたします。ご不明な点や具体的な対応方法については、下記より担当者へご相談ください。</p>
+        <button class="btn-cta" onclick="alert('担当者へのご相談導線をここに設定できます（例：LINE・お問い合わせフォームへのリンク）')">相談窓口へ問い合わせる</button>
       </div>
 
       <button class="restart-link" onclick="restartQuiz()">もう一度診断する</button>
@@ -557,8 +594,134 @@
 </div>
 
 <script>
+/* ===================== INDUSTRY DATA ===================== */
+/* Each industry adds: label, 4 tailored questions (replacing generic org-level Qs 20-23),
+   and scenario cards with sources for the result screen. Base 21 questions stay common. */
+const industries = {
+  general: {
+    label: "共通版（業種を問わない一般診断）",
+    icon: "🏢",
+    extraQuestions: [
+      {cat:"組織としての対策", text:"取引先や委託先のセキュリティ対策状況を確認していますか？", help:"自社が万全でも、取引先の弱点から侵入されるケースが増えています。"},
+      {cat:"組織としての対策", text:"重要な情報資産（顧客データ等）を洗い出し、管理していますか？", help:"何を守るべきか把握できていないと、対策の優先順位も立てられません。"},
+      {cat:"組織としての対策", text:"万が一の被害発生時、誰に連絡し何をするかの対応手順がありますか？", help:"手順がないと、被害発生時に初動が遅れ被害が拡大します。"},
+      {cat:"組織としての対策", text:"情報セキュリティ対策の方針やルールを、文書として明文化していますか？", help:"口頭だけのルールは、社員によって解釈がばらつきます。"},
+    ],
+    scenarios: [
+      {level:'danger', icon:'⚠', title:'このままだと — 事業停止のリスク',
+        body:`ランサムウェア被害は情報漏えいだけでなく、<b>業務システムの停止・取引先への影響</b>など、経営そのものが止まる被害につながります。`,
+        source:'IPA「情報セキュリティ10大脅威 2026」'},
+      {level:'warn', icon:'🔗', title:'取引先を巻き込むリスク',
+        body:`セキュリティ対策の甘い会社が踏み台にされる<b>サプライチェーン攻撃</b>が常態化しています。自社が「加害者」側になるリスクもあります。`,
+        source:'IPA「情報セキュリティ10大脅威 2026」'},
+    ]
+  },
+  manufacturing: {
+    label: "製造業（工場・生産設備）",
+    icon: "🏭",
+    extraQuestions: [
+      {cat:"業種別リスク", text:"工場の生産設備・制御システムと、本社のオフィスネットワークは分離されていますか？", help:"つながったままだと、オフィス側の感染が生産ラインの停止に直結します。"},
+      {cat:"業種別リスク", text:"工場設備・保守用端末・遠隔接続の一覧を把握していますか？", help:"資産台帳に載っていない設備は、管理も復旧もできません。"},
+      {cat:"業種別リスク", text:"設備の保守会社が遠隔接続する際、多要素認証や接続記録の管理をしていますか？", help:"保守用VPNは外部からの侵入口として狙われやすい経路です。"},
+      {cat:"業種別リスク", text:"生産が止まった場合の手作業による代替生産手順を用意していますか？", help:"システム復旧を待つ間、最低限の生産を止めない備えが被害を最小化します。"},
+    ],
+    scenarios: [
+      {level:'danger', icon:'🏭', title:'このままだと — 生産ライン停止',
+        body:`基幹システムが停止すると、工場設備自体は無事でも<b>生産指示や物流データが途絶し、出荷停止</b>に陥る「機能的操業停止」が実際に起きています。`,
+        source:'大手飲料メーカーのシステム障害事例（2025年）'},
+      {level:'warn', icon:'🔗', title:'1社の遅れが取引先全体に波及',
+        body:`海外拠点や子会社のわずかな脆弱性を起点に、短時間で<b>サプライチェーン全体へ被害が拡大</b>する構造が指摘されています。取引先評価の低下にもつながりかねません。`,
+        source:'経済産業省・工場サイバー・フィジカルセキュリティ対策ガイドライン'},
+    ]
+  },
+  medical: {
+    label: "医療・介護",
+    icon: "🏥",
+    extraQuestions: [
+      {cat:"業種別リスク", text:"電子カルテが使えなくなった場合、紙運用に切り替える手順を決めていますか？", help:"システム停止時も診療・ケアを止めない備えが人命に関わります。"},
+      {cat:"業種別リスク", text:"医療機器・介護システムのネットワークは、事務用パソコンと分離されていますか？", help:"分離されていないと、事務用端末の感染が医療機器の停止につながります。"},
+      {cat:"業種別リスク", text:"職員共用のログインIDを廃止し、個人ごとのアカウントにしていますか？", help:"共用IDは、誰がいつ何をしたか追跡できず被害拡大の原因になります。"},
+      {cat:"業種別リスク", text:"外部業者（給食・物流等）が院内・施設内システムに接続する際の管理をしていますか？", help:"委託先経由の侵入で、直接関係ない業務まで停止した事例があります。"},
+    ],
+    scenarios: [
+      {level:'danger', icon:'🏥', title:'このままだと — 診療・ケアの停止',
+        body:`電子カルテを含む院内システムが停止し、<b>通常診療の再開まで約2カ月、復旧費用は数億円規模</b>に及んだ事例があります。`,
+        source:'国内医療機関のランサムウェア被害事例'},
+      {level:'warn', icon:'🔗', title:'委託業者経由の侵入と賠償責任',
+        body:`給食業者など委託先のVPN経由で侵入され診療停止に至った事例では、<b>委託先事業者が病院側に解決金を支払う</b>事態にもなっています。`,
+        source:'国内医療機関のサプライチェーン攻撃事例'},
+    ]
+  },
+  retail: {
+    label: "小売・EC",
+    icon: "🛒",
+    extraQuestions: [
+      {cat:"業種別リスク", text:"ECサイトの決済ページが改ざんされていないか、定期的に確認していますか？", help:"「Webスキミング」という手口で、決済画面から直接カード情報が盗まれるケースが多発しています。"},
+      {cat:"業種別リスク", text:"ECサイトで使うシステム（CMS・プラグイン等）を最新の状態に更新していますか？", help:"古いバージョンのまま放置されたシステムが、主な侵入経路になっています。"},
+      {cat:"業種別リスク", text:"クレジットカード情報を自社で保持しない決済方式を採用していますか？", help:"保持していなくても、決済画面自体が改ざんされれば情報は盗まれます。"},
+      {cat:"業種別リスク", text:"発送・印刷等を委託している業者の情報管理体制を確認していますか？", help:"委託先の被害でも、対応責任は発注元企業に生じます。"},
+    ],
+    scenarios: [
+      {level:'danger', icon:'💳', title:'このままだと — カード情報流出と信用失墜',
+        body:`決済ページのJavaScript改ざんにより、<b>数万件規模のクレジットカード情報・個人情報が漏洩</b>した事例が国内で複数発生しています。`,
+        source:'国内ECサイトの情報漏洩事例'},
+      {level:'warn', icon:'⏳', title:'気づかないまま被害が続くリスク',
+        body:`ある国内ECサイトでは、脆弱性を突かれた情報漏洩が<b>約3年間気づかれないまま続いていた</b>事例が報告されています。`,
+        source:'国内ECサイトの情報漏洩事例'},
+    ]
+  },
+  professional: {
+    label: "士業・コンサル（税理士・社労士等）",
+    icon: "📋",
+    extraQuestions: [
+      {cat:"業種別リスク", text:"顧客ごとにファイルの閲覧・編集権限を分けていますか？", help:"権限が分かれていないと、1つのアカウント侵害で全顧客の情報が漏れます。"},
+      {cat:"業種別リスク", text:"メール送信前の宛先確認（誤送信防止）の仕組みがありますか？", help:"士業の情報漏洩は、攻撃よりもメール誤送信など人的ミスが中心です。"},
+      {cat:"業種別リスク", text:"退職者が顧客データを保持していないか、退職時に確認していますか？", help:"退職後もデータやアクセス権が残っているケースは重大なリスクです。"},
+      {cat:"業種別リスク", text:"打ち合わせの録音データを、許可なく外部の生成AIサービスへ送っていませんか？", help:"顧客の機密情報がAIサービス側に保存・利用されるリスクがあります。"},
+    ],
+    scenarios: [
+      {level:'danger', icon:'📋', title:'このままだと — 顧客企業を巻き込む信頼喪失',
+        body:`士業事務所は複数企業の財務・給与・マイナンバー情報を集中して預かるため、<b>1件の漏洩が複数の顧客企業に被害を広げます</b>。`,
+        source:'IPA「情報セキュリティ10大脅威 2026」'},
+      {level:'warn', icon:'⚖', title:'たった1名分でも生じる報告義務',
+        body:`個人情報保護法では、<b>漏洩した個人データが1名分の誤送付であっても</b>、個人情報保護委員会への報告義務の対象になり得るとされています。`,
+        source:'個人情報保護委員会「漏えい等報告・本人通知の義務化」'},
+    ]
+  },
+};
+
+let selectedIndustry = 'general';
+
+function showIndustrySelect(){
+  document.getElementById('screen-intro').classList.add('hidden');
+  document.getElementById('screen-industry').classList.remove('hidden');
+  renderIndustryOptions();
+}
+
+function renderIndustryOptions(){
+  const wrap = document.getElementById('industryOptions');
+  wrap.innerHTML = '';
+  const roman = ['Ⅰ','Ⅱ','Ⅲ','Ⅳ','Ⅴ'];
+  Object.keys(industries).forEach((key, i) => {
+    const ind = industries[key];
+    const div = document.createElement('div');
+    div.className = 'option' + (selectedIndustry===key ? ' selected' : '');
+    div.innerHTML = `<span class="dot"></span><span>${roman[i]}. ${ind.label}</span>`;
+    div.onclick = () => {
+      selectedIndustry = key;
+      renderIndustryOptions();
+    };
+    wrap.appendChild(div);
+  });
+}
+
+function backToIntro(){
+  document.getElementById('screen-industry').classList.add('hidden');
+  document.getElementById('screen-intro').classList.remove('hidden');
+}
+
 /* ===================== QUESTION DATA ===================== */
-/* 25 items based on IPA structure: 基本的対策(5) / 従業員としての対策(14) / 組織としての対策(6) */
+/* 21 common items (基本的対策5 + 従業員対策14 + 責任者1) + 4 industry-specific items */
 const questions = [
   // 基本的対策
   {cat:"基本的対策", text:"OSやソフトウェアを最新の状態に更新していますか？", help:"古いバージョンのまま使うと、既に知られている弱点から侵入されやすくなります。"},
@@ -583,13 +746,10 @@ const questions = [
   {cat:"従業員としての対策", text:"社外に情報を持ち出す際のルール（許可制など）がありますか？", help:"無許可の持ち出しは、紛失・盗難時に大きな被害につながります。"},
   {cat:"従業員としての対策", text:"クラウドサービス利用時のアクセス権限を必要最小限に設定していますか？", help:"誰でも編集・閲覧できる状態は、情報漏えいのリスクを高めます。"},
 
-  // 組織としての対策
+  // 組織としての対策（共通・固定）
   {cat:"組織としての対策", text:"情報セキュリティに関する責任者を決めていますか？", help:"担当者が不在だと、問題が起きても対応が遅れます。"},
-  {cat:"組織としての対策", text:"取引先や委託先のセキュリティ対策状況を確認していますか？", help:"自社が万全でも、取引先の弱点から侵入されるケースが増えています。"},
-  {cat:"組織としての対策", text:"重要な情報資産（顧客データ等）を洗い出し、管理していますか？", help:"何を守るべきか把握できていないと、対策の優先順位も立てられません。"},
-  {cat:"組織としての対策", text:"万が一の被害発生時、誰に連絡し何をするかの対応手順がありますか？", help:"手順がないと、被害発生時に初動が遅れ被害が拡大します。"},
-  {cat:"組織としての対策", text:"情報セキュリティ対策の方針やルールを、文書として明文化していますか？", help:"口頭だけのルールは、社員によって解釈がばらつきます。"},
 ];
+/* Industry-specific questions (4 items) are appended at quiz start based on selectedIndustry */
 
 const choiceOptions = [
   {label:"実施している", score:4},
@@ -600,10 +760,15 @@ const choiceOptions = [
 
 /* ===================== STATE ===================== */
 let current = 0;
-let answers = new Array(questions.length).fill(null);
+let activeQuestions = [];
+let answers = [];
 
 /* ===================== NAVIGATION ===================== */
 function startQuiz(){
+  activeQuestions = [...questions, ...industries[selectedIndustry].extraQuestions];
+  answers = new Array(activeQuestions.length).fill(null);
+
+  document.getElementById('screen-industry').classList.add('hidden');
   document.getElementById('screen-intro').classList.add('hidden');
   document.getElementById('screen-question').classList.remove('hidden');
   current = 0;
@@ -611,7 +776,7 @@ function startQuiz(){
 }
 
 function renderQuestion(){
-  const q = questions[current];
+  const q = activeQuestions[current];
   document.getElementById('qCategory').textContent = q.cat;
   document.getElementById('qText').textContent = `${current+1}. ${q.text}`;
   document.getElementById('qHelp').textContent = q.help;
@@ -628,7 +793,7 @@ function renderQuestion(){
 
   document.getElementById('btnBack').style.visibility = current===0 ? 'hidden' : 'visible';
   document.getElementById('btnNext').disabled = answers[current]===null;
-  document.getElementById('btnNext').textContent = current === questions.length-1 ? '診断結果を見る' : '次へ';
+  document.getElementById('btnNext').textContent = current === activeQuestions.length-1 ? '診断結果を見る' : '次へ';
 
   updateProgress();
   window.scrollTo(0,0);
@@ -641,7 +806,7 @@ function selectOption(idx){
 
 function nextQuestion(){
   if(answers[current]===null) return;
-  if(current < questions.length-1){
+  if(current < activeQuestions.length-1){
     current++;
     renderQuestion();
   } else {
@@ -657,9 +822,9 @@ function prevQuestion(){
 }
 
 function updateProgress(){
-  const pct = Math.round(((current)/questions.length)*100);
+  const pct = Math.round(((current)/activeQuestions.length)*100);
   document.getElementById('progressFill').style.width = pct + '%';
-  document.getElementById('progressLabel').textContent = `質問 ${current+1} / ${questions.length}`;
+  document.getElementById('progressLabel').textContent = `質問 ${current+1} / ${activeQuestions.length}`;
 }
 
 /* ===================== RESULTS ===================== */
@@ -669,21 +834,23 @@ function showResults(){
   document.getElementById('progressFill').style.width = '100%';
   document.getElementById('progressLabel').textContent = '診断完了';
 
-  // Compute total score
-  let total = 0;
-  answers.forEach(idx => total += choiceOptions[idx].score);
-  total = Math.max(0, total); // floor at 0 for display sanity
-  const pct = Math.min(100, Math.round((total/100)*100));
+  // Compute total score (normalized to 100 regardless of item count)
+  let rawTotal = 0;
+  answers.forEach(idx => rawTotal += choiceOptions[idx].score);
+  const maxPossible = activeQuestions.length * 4;
+  const pct = Math.max(0, Math.min(100, Math.round((rawTotal/maxPossible)*100)));
 
   // Compute category scores
   const cats = {};
-  questions.forEach((q, i) => {
+  activeQuestions.forEach((q, i) => {
     if(!cats[q.cat]) cats[q.cat] = {sum:0, max:0};
     cats[q.cat].sum += choiceOptions[answers[i]].score;
     cats[q.cat].max += 4;
   });
 
-  renderGauge(pct);
+  document.getElementById('resultIndustryLabel').textContent =
+    `${industries[selectedIndustry].label}向け診断結果`;
+
   renderScoreText(pct);
   renderCategoryBars(cats);
   renderScenarios(pct, cats);
@@ -696,30 +863,14 @@ function riskColor(pct){
   return {color:'var(--alert)', bg:'var(--alert-bg)', label:'危険水準'};
 }
 
-function renderGauge(pct){
-  // Gauge arc: semicircle, total length ~ PI*110 = 345.6
-  const totalLen = Math.PI * 110;
-  const filled = totalLen * (pct/100);
-  const arc = document.getElementById('gaugeArc');
-  arc.setAttribute('stroke-dasharray', `${filled} 999`);
-
-  const risk = riskColor(pct);
-  const colorMap = {'var(--safe)':'#4A7C59','var(--gold)':'#C9A227','var(--alert)':'#C1442D'};
-  arc.setAttribute('stroke', colorMap[risk.color]);
-
-  // Needle rotation: -90deg (0%) to +90deg (100%)
-  const angle = -90 + (pct/100)*180;
-  document.getElementById('needleGroup').setAttribute('transform', `rotate(${angle} 130 140)`);
-}
-
 function renderScoreText(pct){
   document.getElementById('scoreBig').textContent = pct;
-  document.getElementById('scoreBig').style.color = pct>=70 ? '#4A7C59' : (pct>=40 ? '#C9A227' : '#C1442D');
+  const textColor = pct>=70 ? '#3D5C42' : (pct>=40 ? '#8A6D3B' : '#8B3A2E');
+  document.getElementById('scoreBig').style.color = textColor;
   const risk = riskColor(pct);
   const tag = document.getElementById('riskTag');
   tag.textContent = risk.label;
-  tag.style.background = risk.bg.replace('var(--','').replace(')','') === 'safe-bg' ? '#E9F2EB' : (risk.label==='注意が必要' ? '#FBF3DA' : '#FBEAE6');
-  tag.style.color = pct>=70 ? '#4A7C59' : (pct>=40 ? '#8a6d10' : '#C1442D');
+  tag.style.color = textColor;
 }
 
 function renderCategoryBars(cats){
@@ -728,7 +879,7 @@ function renderCategoryBars(cats){
   Object.keys(cats).forEach(catName => {
     const c = cats[catName];
     const pct = Math.max(0, Math.round((c.sum/c.max)*100));
-    const color = pct>=70 ? '#4A7C59' : (pct>=40 ? '#C9A227' : '#C1442D');
+    const color = pct>=70 ? '#3D5C42' : (pct>=40 ? '#8A6D3B' : '#8B3A2E');
     const row = document.createElement('div');
     row.className = 'cat-bar-row';
     row.innerHTML = `
@@ -744,33 +895,25 @@ function renderScenarios(pct, cats){
   wrap.innerHTML = '';
 
   const scenarios = [];
+  const ind = industries[selectedIndustry];
 
-  if(pct < 70){
-    scenarios.push({
-      level:'danger', icon:'⚠',
-      title:'このままだと — 事業停止のリスク',
-      body:`ランサムウェア被害は情報漏えいだけでなく、<b>製造ラインの停止・出荷不能・システム利用不可</b>など、経営そのものが止まる被害につながります。中小企業への攻撃割合は年々高まっています。`
-    });
+  // Industry-specific scenarios (only shown when score suggests real exposure)
+  if(pct < 75){
+    ind.scenarios.forEach(s => scenarios.push(s));
   }
 
-  if(cats['組織としての対策'] && (cats['組織としての対策'].sum/cats['組織としての対策'].max) < 0.6){
-    scenarios.push({
-      level:'warn', icon:'🔗',
-      title:'取引先を巻き込むリスク',
-      body:`セキュリティ対策の甘い会社が踏み台にされ、取引先へ被害が広がる<b>サプライチェーン攻撃</b>が常態化しています。自社が「加害者」側になり、取引停止や賠償を求められる可能性もあります。`
-    });
-  }
-
-  const aiWeak = answers[13]!==null && answers[13]<=1;
+  // AI usage risk — check the two AI-related common questions (indices 13 and 14)
+  const aiWeak = (answers[13]!==null && answers[13]<=1) || (answers[14]!==null && answers[14]<=1);
   if(aiWeak){
     scenarios.push({
       level:'warn', icon:'🤖',
       title:'AI利用が新たなリスクに',
-      body:`生成AIの業務利用が広がる中、「AIの利用をめぐるサイバーリスク」が情報セキュリティ10大脅威に初登場しました。ルールのないAI利用は、機密情報の漏えいに直結します。`
+      body:`生成AIの業務利用が広がる中、「AIの利用をめぐるサイバーリスク」が情報セキュリティ10大脅威に初登場しました。ルールのないAI利用は、機密情報の漏えいに直結します。`,
+      source:'IPA「情報セキュリティ10大脅威 2026」'
     });
   }
 
-  if(pct >= 70){
+  if(pct >= 75){
     scenarios.push({
       level:'ok', icon:'✓',
       title:'土台はできています',
@@ -784,6 +927,7 @@ function renderScenarios(pct, cats){
     card.innerHTML = `
       <div class="scenario-title"><span class="scenario-icon">${s.icon}</span>${s.title}</div>
       <div class="scenario-body">${s.body}</div>
+      ${s.source ? `<div class="fact-source" style="margin-top:10px;">出典：${s.source}</div>` : ''}
     `;
     wrap.appendChild(card);
   });
@@ -793,7 +937,7 @@ function renderWeakItems(){
   const wrap = document.getElementById('weakItems');
   wrap.innerHTML = '';
 
-  const weak = questions
+  const weak = activeQuestions
     .map((q,i) => ({...q, idx:i, score:choiceOptions[answers[i]].score}))
     .filter(q => q.score <= 0)
     .sort((a,b) => a.score - b.score)
@@ -819,8 +963,9 @@ function renderWeakItems(){
 }
 
 function restartQuiz(){
-  answers = new Array(questions.length).fill(null);
   current = 0;
+  answers = [];
+  activeQuestions = [];
   document.getElementById('screen-result').classList.add('hidden');
   document.getElementById('screen-intro').classList.remove('hidden');
   document.getElementById('progressFill').style.width = '0%';
